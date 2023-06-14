@@ -1,2 +1,2 @@
 #!/bin/bash
-tr A-Za-zN-ZA-Mn-za-m
+grep -i "bin" /etc/passwd | wc -l
