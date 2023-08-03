@@ -1,2 +1,2 @@
 #!/bin/bash
-telnet towel binkenlights.nl
+makdir -p welcome/to/holberton
