@@ -1,2 +1,2 @@
 #!/bin/bash
-tr 'A-Za-Z''N-Z
+printf '%\n' $DECIMAL
