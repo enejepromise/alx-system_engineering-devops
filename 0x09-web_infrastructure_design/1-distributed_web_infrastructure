@@ -1,0 +1,33 @@
+https://imgur.com/a/o2AYppic 
+
+
+Enhancing Web Infrastructure for Performance, Reliability, and Scalability
+To handle high traffic, ensure service availability during outages, distribute workload effectively, and enhance user experience, our web infrastructure includes several key components and configurations:
+
+Load Balancer:
+
+Round-Robin Algorithm: This algorithm rotates request assignments evenly among servers, ensuring a balanced distribution of tasks.
+Active-Active Setup: Both servers are active and handle requests simultaneously, providing redundancy and better resource utilization. In contrast, an Active-Passive setup has one server handling traffic while the other remains on standby, only activating upon the primary server's failure.
+Primary-Replica Database Cluster:
+
+Primary Node: Handles all write operations, including insertions, updates, and deletions.
+Replica Nodes: Handle read operations and apply changes from the primary node, ensuring data consistency and load distribution.
+Issues with the Infrastructure
+Single Point of Failure (SPOF):
+
+The load balancer is a SPOF. If it fails, the entire web infrastructure becomes unavailable.
+Security Concerns:
+
+The absence of firewalls and HTTPS exposes data to potential attackers, leading to insecure data transmission and vulnerability to exploits across different ports.
+Lack of Monitoring:
+
+Without proper monitoring, unexpected downtime can occur, leading to poor user experience. Monitoring is essential to be aware of the state and health of servers, enabling proactive maintenance and issue resolution.
+
+
+
+
+
+
+
+
+

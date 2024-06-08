@@ -1,0 +1,31 @@
+URL to single server implementation design: https://imgur.com/a/sL4h82r 
+
+
+
+A server is a powerful computer program running on a dedicated computer system.
+
+Key Components and Their Roles
+Domain Name: A domain name serves as a user-friendly address for a website, replacing the need to remember complex numerical IP addresses.
+
+DNS Record for "www" in www.foobar.com: The "www" part is typically associated with a CNAME record (Canonical Name record).
+
+Web Server: A web server functions as an intermediary between your web browser and the website you are trying to access.
+
+Application Server: Positioned between the web server and the database, the application server manages the "behind-the-scenes" logic of the website. It processes user input, interacts with the database, and generates customized web pages based on user interactions.
+
+Database: A database stores information in an easily accessible, organized, and modifiable manner.
+
+Communication Protocol: The server uses the TCP/IP protocol suite to communicate with the user's computer requesting the website.
+
+Issues with This Infrastructure
+Numerous points of failure
+Difficulty in scaling
+Periodic downtime during updates and maintenance
+
+
+
+
+
+
+
+

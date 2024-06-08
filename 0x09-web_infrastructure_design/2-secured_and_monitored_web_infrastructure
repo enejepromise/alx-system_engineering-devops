@@ -1,0 +1,41 @@
+https://imgur.com/a/P1icU7q
+
+Enhancing Web Infrastructure for Performance, Reliability, and Security
+To address the growing demands of high traffic, service availability, workload distribution, and user experience, we employ various strategies and technologies:
+
+Key Components and Their Roles
+Firewalls:
+
+Function: Act as security guards at the network level by monitoring incoming and outgoing traffic based on predefined rules.
+Purpose: Allow legitimate traffic while blocking potentially harmful traffic, such as malware or unauthorized access attempts.
+HTTPS:
+
+Function: Adds a layer of encryption to communications.
+Purpose: Scrambles data during transmission between the server and user, making it much more difficult for attackers to intercept sensitive information.
+Monitoring:
+
+Purpose: Proactively ensures a smooth user experience by identifying and resolving issues early on.
+Data Collection Methods:
+Server Logs: Record server activity, including user requests, errors, and response times.
+Agent Software: Installs on the server to actively monitor resource usage and performance metrics.
+External Monitoring Services: Ping the website from different locations to assess uptime and response times.
+Monitoring Web Server Queries Per Second (QPS)
+Server Software Tools:
+
+Most web server software (like Apache or Nginx) include modules or configuration options to track QPS.
+Third-Party Monitoring Tools:
+
+Many website monitoring services offer QPS monitoring as part of their packages, providing dashboards and alerts to visualize and react to changes in QPS.
+Issues with the Infrastructure
+SSL Termination at the Load Balancer:
+
+Concern: Terminating SSL at the load balancer may expose decrypted traffic within the internal network, raising security concerns if the load balancer becomes compromised.
+Single MySQL Write Server:
+
+Scalability: Having only one MySQL server capable of accepting writes can limit scalability, as one server may struggle to keep up with the load.
+SPOF: It introduces a single point of failure.
+Identical Server Setup:
+
+Inefficiency: Not all servers have the same resource requirements, making an identical setup potentially inefficient.
+Maintenance Challenges: Changes to one component can potentially affect others, complicating maintenance.
+By addressing these issues and optimizing the infrastructure, we can significantly enhance the performance, reliability, and security of our web services.
