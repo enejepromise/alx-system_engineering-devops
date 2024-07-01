@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
-# how to generate rsa key pairs
+# Creates an RSA key pair
 
-ssh-keygen -t rsa -b 4096 -p betty -f school
+# Defining environment variables
+P_KEY_PATH="school"
+
+# Generate key pair if it doesn't exist
+if [ ! -f "$P_KEY_PATH" ]; then
+	ssh-keygen -b 4096 -f "$P_KEY_PATH" -N "betty" || { echo "Failed to generate key pair"; exit 1; }
+else
+	echo "Key pair already exists at $P_KEY_PATH"
+fi
