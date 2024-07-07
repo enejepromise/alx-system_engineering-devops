@@ -1,9 +1,8 @@
-Include /etc/ssh/ssh_config.d/*.conf
-
-Host *
+Host ubuntu@100.25.183.177
 #   ForwardAgent no
 #   ForwardX11 no
 #   ForwardX11Trusted yes
+   
     PasswordAuthentication no
 #   HostbasedAuthentication no
 #   GSSAPIAuthentication no
