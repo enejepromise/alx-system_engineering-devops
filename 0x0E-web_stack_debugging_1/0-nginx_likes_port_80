@@ -2,7 +2,7 @@
 # fixing issues from using docker 
 # make the apache sever return Hello Horberton when querying the root
 
-sudo apt-get update -y
+sudo apt-get -y update 
 sudo apt-get install -y apache2
 sudo /etc/init.d/apache2 start
 echo "Hello Holberton" | sudo tee -a /var/www/html/index.html
