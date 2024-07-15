@@ -2,8 +2,9 @@
 # fixing issues from using docker 
 # make the apache sever return Hello Horberton when querying the root
 
-sudo apt-get -y update 
-sudo apt-get install -y apache2
-sudo /etc/init.d/apache2 start
-echo "Hello Holberton" | sudo tee -a /var/www/html/index.html
-sudo /etc/init.d/apache2 restart
+echo "Restarting Nginx"
+if nginx -t; then
+	nginx -s restart
+else
+	echo "Recheck configuration"
+fi
