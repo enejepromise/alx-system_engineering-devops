@@ -1,0 +1,20 @@
+#first update
+sudo apt update -y
+
+#Installing ufw
+sudo apt install ufw
+
+#Enabling firewall
+sudo ufw enable
+
+#blocking all incoming traffic
+sudo ufw default deny incoming 
+
+#Enabling 22 (SSH)
+sudo ufw allow 22/tcp
+
+#Enabling 443 (HTTPS SSL)
+sudo ufw allow 443/tcp
+
+#Enabling 80 (HTTP)
+sudo ufw allow 80/tcp
