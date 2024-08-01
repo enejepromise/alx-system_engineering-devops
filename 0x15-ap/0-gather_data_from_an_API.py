@@ -1,30 +1,41 @@
 #!/usr/bin/python3
-'''
-gather employee data from API
-'''
-
-import re
+"""
+Returns information on a given employee
+"""
 import requests
 import sys
 
-REST_API = "https://jsonplaceholder.typicode.com"
 
-if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        if re.fullmatch(r'\d+', sys.argv[1]):
-            id = int(sys.argv[1])
-            req = requests.get('{}/users/{}'.format(REST_API, id)).json()
-            task_req = requests.get('{}/todos'.format(REST_API)).json()
-            emp_name = req.get('name')
-            tasks = list(filter(lambda x: x.get('userId') == id, task_req))
-            completed_tasks = list(filter(lambda x: x.get('completed'), tasks))
-            print(
-                'Employee {} is done with tasks({}/{}):'.format(
-                    emp_name,
-                    len(completed_tasks),
-                    len(tasks)
-                )
-            )
-            if len(completed_tasks) > 0:
-                for task in completed_tasks:
-                    print('\t {}'.format(task.get('title')))
+def fetch_data(url):
+    """Fetches data from URL"""
+    response = requests.get(url)
+
+    if response.status_code != 200:
+        print(f"Failed to fetch data from {url}")
+        sys.exit(3)
+    return response.json()
+
+
+if __name__ == "__main__":
+    """Prints an employee's info"""
+    if len(sys.argv) != 2:
+        print(f"Usage: {sys.argv[0]} [ID]")
+        sys.exit(1)
+
+    try:
+        ID = int(sys.argv[1])
+        todo_url = f"https://jsonplaceholder.typicode.com/users/{ID}/todos"
+        user_url = f"https://jsonplaceholder.typicode.com/users/{ID}"
+    except ValueError:
+        print("Invalid ID")
+        sys.exit(2)
+
+    name = fetch_data(user_url).get("name")
+    todos = fetch_data(todo_url)
+
+    task_done = sum(1 for task in todos if task.get("completed"))
+
+    print(f"Employee {name} is done with tasks({task_done}/{len(todos)}):")
+    for task in todos:
+        if task.get("completed"):
+            print(f"\t {task.get('title')}")
