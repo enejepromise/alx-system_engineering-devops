@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
+# prints "Best School" 10 times
 
-# Initialize a counter variable
-counter=1
+n=0
 
-# Loop until counter is greater than 10
-until [ $counter -gt 10 ]
-do
-    echo "Best School"
-    # Increment the counter
-    ((counter++))
+until [ $n -eq 10 ]; do
+	echo "Best School"
+	((n++))
 done
